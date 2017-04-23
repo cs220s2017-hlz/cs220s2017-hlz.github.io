@@ -1,2 +1,2 @@
-[submodule "libfoo"]
-	path = include/foo
+[submodule "swiftmailer"]
+	path = swiftmailer
