@@ -23,3 +23,4 @@ if ($mailer->send($message)) {
 } else {
     echo 'I am sure, your configuration are not correct. :(';
 }
+?>
