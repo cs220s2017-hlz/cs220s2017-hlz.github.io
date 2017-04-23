@@ -2,20 +2,24 @@
 We found this code by looking for information on Stack Overflow at:
 http://stackoverflow.com/questions/712392/send-email-using-the-gmail-smtp-server-from-a-php-page
 */
-
 <?php
-require_once 'swiftmailer/lib/swift_required.php';
+// Mail Transport
+$transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465)
+    ->setUsername('cs220s2017.hlz@gmail.com') // Your Gmail Username
+    ->setPassword('teamwork69'); // Your Gmail Password
 
-$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
-  ->setUsername('cs220s2017.hlz')
-  ->setPassword('teamwork69');
-
+// Mailer
 $mailer = Swift_Mailer::newInstance($transport);
 
-$message = Swift_Message::newInstance($_GET["email"])
-  ->setFrom(array('cs220s2017.hlz@gmail.com' => $_GET["name"]))
-  ->setTo(array('cs220s2017.hlz@gmail.com'))
-  ->setBody($_POST["comment"]);
+// Create a message
+$message = Swift_Message::newInstance('An email from our site!')
+    ->setFrom(array($_POST["email"] => $_POST["name"])) // can be $_POST['email'] etc...
+    ->setTo(array('cs220s2017.hlz@gmail.com' => 'HLZ Studios')) // your email / multiple supported.
+    ->setBody($_POST["comment"], 'text/html');
 
-$result = $mailer->send($message);
-?>
+// Send the message
+if ($mailer->send($message)) {
+    echo 'Mail sent successfully.';
+} else {
+    echo 'I am sure, your configuration are not correct. :(';
+}
