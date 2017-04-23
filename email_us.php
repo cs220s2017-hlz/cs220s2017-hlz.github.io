@@ -1,7 +1,3 @@
-/*
-We found this code by looking for information on Stack Overflow at:
-http://stackoverflow.com/questions/712392/send-email-using-the-gmail-smtp-server-from-a-php-page
-*/
 <?php
 // Mail Transport
 $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465)
