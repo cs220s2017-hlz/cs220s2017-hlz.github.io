@@ -36,12 +36,44 @@
           </fieldset>
         -->
         <div class="argentina">
+          <h1>Who are we?</h1>
+          <br />
+          <img src="img/blondie.png" width="200" />
+          <img src="img/baby_arm.png" width="200" />
+          <img src="img/hunter.png" width="200" />
+          <br />
+          <p>
+            Champions. We are champions. That's who we are. Deal with it.
+          </p>
+        </div>
+        <div class="argentina">
           <object type="application/x-java-applet" height="800" width="800">
             <param name="code" value="GUIBase" />
             <param name="archive" value="src/GUIBase.jar" />
             Applet failed to run.  No Java plug-in was found.
           </object>
         </div>
+        <!--
+        Source code for this game is from Zac Shaffer's 440 final project.
+        We wanted to use the object tag in HTML5, and so we repurposed my
+        final project's java code and compressed it into a JAR archive/applet.
+        However, modern browsers have begun to move away from using Java applets
+        in general (Chrome, Firefox, etc.), so this code only executes on certain
+        machines in certain environments.
+        -->
+        <div class="argentina">
+          <object height="800" width="800" data="dynamic-animated-explosion/main.swf">
+          <embed src="dynamic-animated-explosion/main.swf" />
+            Applet failed to run.  No Flash Player found.
+          </object>
+        </div>
+        <!--
+        Source code for the explosion animations:
+        http://www.freeactionscript.com/2011/08/dynamic-explosion-generator/
+        We needed something to demonstrate embedding Flash files, but the Alden
+        machines don't have programs that can create or program .fla/.swf files.
+        Instead, we opted to use a free, open-source Flash file.
+        -->
           <div class="info">
             © 2017 Hunter Hoesch, Lucas Hoesch, Zachary Shaffer v2.0.2
           </div>
