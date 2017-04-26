@@ -156,7 +156,7 @@ textarea {
   border-width: thin;
   margin-top: 2em;
   padding-top: 5px;
-  position: fixed;
+  position:relative;
 }
 
 .container img {
